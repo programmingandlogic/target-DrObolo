@@ -1,0 +1,41 @@
+/*
+ * File: Rainbow.java
+ * ------------------
+ * This program is a stub for the Rainbow problem, which displays
+ * a rainbow by adding consecutively smaller circles to the canvas.
+ */
+
+import acm.program.*;
+import acm.graphics.*;
+import java.awt.*;
+
+public class Rainbow extends GraphicsProgram {
+
+	public void run() {
+		double width = getWidth();
+		double height = getHeight();
+		/* Creates outer ring, fills and outlines with red, 
+		divides width and height by 2 then subtracts radius to center */
+		GOval oval = new GOval (width/2-72, height/2-72, 144, 144);
+		oval.setFilled(true);
+		oval.setColor(Color.RED);
+		add(oval);
+		
+		/* Creates second ring, fills and outlines with white, 
+		uses same method to center. Multiplied 144 (original diameter) 
+		by 0.65 then rounded for new diameter. */
+		GOval oval2 = new GOval (width/2-47, height/2-47, 94, 94);
+		oval2.setFilled(true);
+		oval2.setColor(Color.WHITE);
+		add(oval2);
+		
+		/* Creates third and final ring, fills and outlines with red,
+		 repeat centering process. Multiplied 144 by 0.3 then 
+		 rounded for new diameter*/
+		GOval oval3 = new GOval (width/2-22, height/2-22, 44, 44);
+		oval3.setFilled(true);
+		oval3.setColor(Color.RED);
+		add(oval3);
+		
+	}
+}
